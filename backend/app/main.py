@@ -1,7 +1,6 @@
 import os
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from config import UPLOAD_DIR
 from assembly import transcribe_with_assembly
 from grammar import check_grammar
 
