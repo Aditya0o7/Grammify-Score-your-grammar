@@ -1,0 +1,5 @@
+flask
+flask-cors
+requests               # for AssemblyAI API calls
+# language_tool_python
+python-dotenv

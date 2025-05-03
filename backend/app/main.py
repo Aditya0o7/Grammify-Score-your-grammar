@@ -1,0 +1,30 @@
+import os
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+from config import UPLOAD_DIR
+from assembly import transcribe_with_assembly
+from grammar import check_grammar
+
+
+os.makedirs(UPLOAD_DIR, exist_ok=True)
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/score', methods=['POST'])
+def score_audio():
+    file = request.files.get('file')
+    if not file:
+        return jsonify({'error': 'No file uploaded'}), 400
+
+    try:
+        # Transcribe audio directly from the file object
+        text = transcribe_with_assembly(file)
+        # Grammar check
+        result = check_grammar(text)
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+    return jsonify(result)
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000, debug=True)
