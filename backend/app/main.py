@@ -4,8 +4,6 @@ from flask_cors import CORS
 from assembly import transcribe_with_assembly
 from grammar import check_grammar
 
-
-os.makedirs(UPLOAD_DIR, exist_ok=True)
 app = Flask(__name__)
 CORS(app)
 
