@@ -43,7 +43,7 @@ Ensure you have the following installed on your system:
 ### Installation Instructions
 
 #### 1. Clone the Repository
-git clone https://github.com/your-username/Grammify.git
+git clone https://github.com/Aditya0o7/Grammify-Score-your-grammar
 cd Grammify
 
 #### 2. Set Up the Backend
