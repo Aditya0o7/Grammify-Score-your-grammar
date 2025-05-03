@@ -37,7 +37,7 @@ function App() {
         className="text-4xl font-bold mb-8"
         variants={childVariants}
       >
-        Grammar Score App
+        Grammify: Score Your Grammar
       </motion.h1>
       <motion.div
         className="w-full max-w-lg bg-white rounded-lg shadow-lg p-6 text-gray-800"
